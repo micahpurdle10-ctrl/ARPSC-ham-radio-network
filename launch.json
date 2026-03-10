@@ -1,0 +1,20 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Start Expo (Mobile)",
+            "type": "node-terminal",
+            "request": "launch",
+            "command": "powershell -ExecutionPolicy Bypass -Command \"cd '${workspaceFolder}/ARPSCApp'; npm start\"",
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "name": "Launch ARPSC App in Edge",
+            "request": "launch",
+            "type": "msedge",
+            "url": "http://localhost:19006",
+            "webRoot": "${workspaceFolder}/ARPSCApp",
+            "preLaunchTask": "Start Expo Web Server"
+        }
+    ]
+}
