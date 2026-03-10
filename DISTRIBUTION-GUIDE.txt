@@ -1,0 +1,116 @@
+================================================================================
+ARPSC HAMS WEB APP - DISTRIBUTION GUIDE
+================================================================================
+
+HOW TO SHARE THIS APP WITH OTHERS
+----------------------------------
+
+This app runs in any modern web browser (Chrome or Edge) on any Windows PC.
+No installation required. Just 2 files needed:
+
+1. WORKING-LAUNCHER.html  (the app)
+2. ARPSC-START.bat        (the launcher)
+
+SHARING INSTRUCTIONS
+---------------------
+
+1. Copy these 2 files to a folder (e.g., "ARPSC-Hams" or "ARPSC-App")
+2. Zip the folder
+3. Send via email or cloud storage (Dropbox, Google Drive, OneDrive, etc.)
+4. Recipients extract the zip folder
+5. Double-click ARPSC-START.bat to launch
+6. Choose Chrome or Edge (whichever opens)
+
+MINIMUM REQUIREMENTS
+---------------------
+- Windows 10 or later
+- Google Chrome OR Microsoft Edge (browser)
+- Internet connection (for weather radar only)
+
+HOW END USERS LAUNCH THE APP
+------------------------------
+
+Step 1: Receive and extract the ARPSC-Hams folder
+Step 2: Open the folder
+Step 3: Double-click "ARPSC-START.bat" (or right-click > Open with CMD)
+Step 4: Browser launches with the app
+Step 5: Log in with provided PIN and full name
+
+TROUBLESHOOTING FOR END USERS
+------------------------------
+
+PROBLEM: "Neither Microsoft Edge nor Google Chrome found"
+SOLUTION: Install Chrome or Edge from microsoft.com or google.com/chrome
+
+PROBLEM: File won't open
+SOLUTION: 
+  - Right-click ARPSC-START.bat
+  - Select "Run as administrator"
+  - Or drag WORKING-LAUNCHER.html onto Chrome/Edge icon
+
+PROBLEM: Browser opens but page is blank
+SOLUTION:
+  - Refresh page (Ctrl+R)
+  - Try the other browser (Chrome vs Edge)
+  - Check internet connection for weather features
+
+HOW TO REVOKE ACCESS
+---------------------
+
+To prevent someone from using the app:
+1. Keep the ARPSC-START.bat and WORKING-LAUNCHER.html secure
+2. Don't share with unauthorized users
+3. Once files are revoked, they can't log in without the PIN
+
+To change PIN codes:
+- Owner modifies PINs directly in WORKING-LAUNCHER.html using a text editor
+- Look for "501": "Owner", "236": "Moderator", "958": "User"
+- Change "501", "236", "958" to new PIN codes
+- Save file
+
+OPTIONAL: CREATE DESKTOP SHORTCUT
+----------------------------------
+
+For easier access, users can create a shortcut:
+
+Windows 10/11:
+1. Right-click ARPSC-START.bat
+2. Select "Create shortcut"
+3. Move shortcut to Desktop
+4. Double-click to launch
+
+FEATURES
+--------
+
+All users receive:
+- Real-time weather radar
+- Multi-room chat system
+- Login activity logging
+- 3-attempt login security
+- Auto-save session (stay logged in across closes)
+- Macomb County, Michigan focused
+
+Owner/Moderator features:
+- Send emergency alerts to all users
+- See login/logout activity log
+- Reset locked-out user accounts
+- Manage system settings
+
+SECURITY NOTES
+---------------
+
+1. PINs should be shared only with authorized users
+2. Browser stores session locally (no server/cloud)
+3. Closing app with explicit Logout is recommended
+4. All data deleted if browser cache is cleared
+5. Weather radar requires internet connection
+
+SUPPORT
+-------
+
+For issues, contact the app administrator with:
+- Error message (if any)
+- Browser and Windows version
+- Steps you were taking when problem occurred
+
+================================================================================

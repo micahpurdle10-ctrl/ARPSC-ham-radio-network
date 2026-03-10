@@ -1,0 +1,90 @@
+========================================
+EMERGENCY FEATURES INSTALLATION GUIDE
+========================================
+
+You now have a new "Resources" tab with:
+- 🏠 Emergency Shelter Map (collapsible)
+- ⚡ Power Outage Map (collapsible)  
+- 📦 Equipment & Resource Board (collapsible)
+- ☀️ NOAA Solar Data & Propagation (collapsible)
+
+Plus a "Storm Mode" button that switches site to emergency red layout!
+
+========================================
+QUICK INSTALL STEPS:
+========================================
+
+1. OPEN FILE: WORKING-LAUNCHER.html in a text editor
+
+2. FIND LINE 633 (tabs array):
+   var tabs = ["Home", "Safety", "Weather", "Chat", "Meetings", "Check-In", "Frequencies", "Settings"];
+   
+   CHANGE TO:
+   var tabs = ["Home", "Safety", "Resources", "Weather", "Chat", "Meetings", "Check-In", "Frequencies", "Settings"];
+
+3. FIND LINE 538 (in header section, after darkToggle):
+                    <label class="muted" for="darkToggle">Dark</label>
+                    <input id="darkToggle" type="checkbox" aria-label="Toggle dark mode">
+                    
+   ADD BELOW IT:
+                    <label class="muted" for="stormToggle">Storm</label>
+                    <input id="stormToggle" type="checkbox" aria-label="Toggle storm mode">
+
+4. FIND LINE 609 (state object, after safetyStatus line):
+                safetyStatus: savedState ? savedState.safetyStatus : {},
+                
+   ADD BELOW IT:
+                stormMode: savedState ? savedState.stormMode : false,
+                equipment: savedState ? savedState.equipment : [],
+
+5. FIND LINE 568 (saveState function, in dataToSave object):
+                    safetyStatus: state.safetyStatus
+                    
+   ADD COMMA AND THESE LINES:
+                    safetyStatus: state.safetyStatus,
+                    stormMode: state.stormMode,
+                    equipment: state.equipment
+
+6. COPY ALL CSS from EMERGENCY-FEATURES-ADDON.js file  
+   PASTE after line 350 in the <style> section
+
+7. COPY the entire renderResources() function from EMERGENCY-FEATURES-ADDON.js
+   PASTE after the renderSafety() function (around line 870)
+
+8. FIND LINE 970 (renderContent function):
+                if (state.tab === "Safety") html = renderSafety();
+                
+   ADD BELOW IT:
+                if (state.tab === "Resources") html = renderResources();
+
+9. COPY the wireTabActions additions from EMERGENCY-FEATURES-ADDON.js
+   PASTE at the end of wireTabActions() function (around line 1080)
+
+10. SAVE FILE and refresh browser at http://127.0.0.1:8080
+
+========================================
+WHAT YOU GET:
+========================================
+
+✅ New "Resources" Tab (3rd tab)
+✅ Storm Mode Toggle Button (next to Dark mode)
+✅ Emergency Shelter Locations Map
+✅ Power Outage Tracking Map  
+✅ Equipment & Resource Board with status tracking
+✅ NOAA Solar Data & HF Propagation Forecast
+✅ All sections collapsible (hide/show buttons)
+✅ Emergency red theme when Storm Mode active
+✅ Everything persists across refreshes
+
+========================================
+STORM MODE FEATURES:
+========================================
+
+Click "Storm" toggle to activate:
+- 🚨 Site turns EMERGENCY RED
+- Header pulses red for attention
+- Critical information prioritized
+- Alert sent to all users
+- Perfect for severe weather events
+
+========================================

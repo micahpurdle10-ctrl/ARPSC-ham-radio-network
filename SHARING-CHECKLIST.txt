@@ -1,0 +1,87 @@
+================================================================================
+TO SHARE THIS APP WITH OTHERS - COPY THESE 3 FILES ONLY:
+================================================================================
+
+MINIMUM FILES NEEDED:
+---------------------
+
+1. ARPSC-START.bat              (launcher - double-click to run)
+2. WORKING-LAUNCHER.html        (the app itself)
+3. USER-GUIDE.txt               (quick start instructions)
+
+Optional (but helpful):
+4. DISTRIBUTION-GUIDE.txt       (admin/sharing instructions)
+
+HOW TO SHARE:
+-------------
+
+Option A - Email/Cloud Share:
+  1. Select the 3 files above
+  2. Right-click → Send to Compressed (zipped) folder
+  3. Email the ZIP file or upload to OneDrive/Google Drive/Dropbox
+  4. Recipients extract and double-click ARPSC-START.bat
+
+Option B - USB Drive:
+  1. Copy the 3 files to a USB stick
+  2. Recipient plugs in USB
+  3. Double-click ARPSC-START.bat on the USB
+
+Option C - Network Share:
+  1. Copy the 3 files to a shared network folder
+  2. Others open the folder and run ARPSC-START.bat
+
+WHAT NOT TO SHARE:
+------------------
+
+These files are development-only and not needed:
+- App.js
+- App_Complete.js
+- App_Enhanced.js
+- firebaseConfig.js
+- package.json
+- babel.config.js
+- app.json
+- metro.config.js
+- *.md files (optional - for your reference only)
+- /node_modules/ folder
+- /assets/ folder
+- /web/ folder
+- /web-build/ folder
+- .expo/ folder
+- launch-chrome.ps1
+- launch-edge.ps1
+- LAUNCH-CHROME.bat (old version)
+- LAUNCH-EDGE.bat (old version)
+
+THOSE CAN ALL BE DELETED IF YOU WANT TO CLEAN UP
+
+WHAT YOU'RE ACTUALLY SHARING:
+-----------------------------
+
+The app is 100% contained in WORKING-LAUNCHER.html
+That's the only file that matters technically.
+
+ARPSC-START.bat is just a convenient launcher.
+USER-GUIDE.txt is just instructions.
+
+So technically you could even just share WORKING-LAUNCHER.html
+and have people drag it onto Chrome/Edge.
+
+But ARPSC-START.bat makes it easier for non-technical users.
+
+HOW RECIPIENTS USE IT:
+----------------------
+
+1. Extract the ZIP (or copy from USB/network)
+2. Find a folder with ARPSC-START.bat and WORKING-LAUNCHER.html
+3. Double-click ARPSC-START.bat
+4. Browser opens automatically
+5. Log in with PIN and full name
+6. App is ready to use
+
+System Requirements:
+- Windows 10 or later
+- Google Chrome OR Microsoft Edge (modern browser)
+- Internet connection (for weather radar only)
+
+================================================================================

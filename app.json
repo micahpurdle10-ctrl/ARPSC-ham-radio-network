@@ -1,0 +1,39 @@
+{
+    "expo": {
+        "name": "ARPSC Hams - Emergency Communications",
+        "slug": "arpscapp",
+        "version": "2.0.0",
+        "orientation": "portrait",
+        "icon": "./assets/icon.png",
+        "userInterfaceStyle": "automatic",
+        "entryPoint": "./App_Complete.js",
+        "splash": {
+            "image": "./assets/splash.png",
+            "resizeMode": "contain",
+            "backgroundColor": "#003366"
+        },
+        "assetBundlePatterns": [
+            "**/*"
+        ],
+        "ios": {
+            "supportsTablet": true,
+            "bundleIdentifier": "com.arpsc.hamsapp"
+        },
+        "android": {
+            "adaptiveIcon": {
+                "foregroundImage": "./assets/adaptive-icon.png",
+                "backgroundColor": "#003366"
+            },
+            "package": "com.arpsc.hamsapp"
+        },
+        "web": {
+            "favicon": "./assets/favicon.png",
+            "name": "ARPSC Hams Emergency Communications",
+            "shortName": "ARPSC Hams",
+            "description": "Emergency communications platform for ham radio operators",
+            "themeColor": "#003366",
+            "backgroundColor": "#f0f4f8",
+            "bundler": "metro"
+        }
+    }
+}

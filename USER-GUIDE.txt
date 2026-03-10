@@ -1,0 +1,114 @@
+================================================================================
+ARPSC HAMS WEB APP - QUICK START
+================================================================================
+
+LAUNCHING THE APP
+-----------------
+
+1. Double-click the "ARPSC-START.bat" file
+2. A window will open automatically in your browser
+3. If nothing opens, copy this into your browser address bar:
+   file:///[path-to-folder]/WORKING-LAUNCHER.html
+
+FIRST TIME LOGGING IN
+---------------------
+
+You need two things:
+1. Your FULL NAME (required) - Example: John Davis
+2. Your PIN (provided by app administrator)
+3. Callsign (optional) - Your ham radio callsign like "N4XYZ"
+
+Enter these and click "Login"
+
+STAYING LOGGED IN
+-----------------
+
+Once logged in, the app remembers you even if you:
+- Close the browser
+- Restart your computer
+- Shut down the browser completely
+
+You stay logged in until you click the "Logout" button.
+
+MAIN FEATURES
+-------------
+
+HOME: County status and your role info
+WEATHER: Real-time radar and storm alerts
+CHAT: Multi-room messaging with other app users
+MEETINGS: County meetings and events
+CHECK-IN: Report your status and location
+FREQUENCIES: Macomb County repeater frequencies
+SETTINGS: Theme and admin features (if Moderator/Owner)
+
+USING THE WEATHER RADAR
+-----------------------
+
+Click the WEATHER tab to see:
+- Live radar with rain/snow colors
+- Storm intensity map
+- Click the PLAY button (▶) to animate forecast
+- Use menu (≡) button for different weather layers
+
+USING CHAT
+----------
+
+Click CHAT tab to:
+- Select a room from the dropdown (General, Weather, Emergency, etc.)
+- See messages from other logged-in users
+- Type a message and hit Send
+- Messages only go to users with the app open
+
+EMERGENCY ALERTS (Moderators/Owners only)
+-----------------------------------------
+
+Click HOME tab → "Send Emergency Alert" button
+Alert posts to the Emergency Room and shows to all logged-in users
+
+LOGGING OUT
+-----------
+
+Click the "LOGOUT" button in the top right
+Confirm when asked
+You'll be logged out and must log in again next time
+
+TROUBLESHOOTING
+---------------
+
+PROBLEM: Blank page when app opens
+SOLUTION: 
+  - Refresh the page (Ctrl+R)
+  - Close and re-run ARPSC-START.bat
+  - Try a different browser (Chrome vs Edge)
+
+PROBLEM: "Invalid PIN" message
+SOLUTION:
+  - Check PIN from app administrator
+  - Make sure CAPS LOCK isn't on
+  - After 3 failed tries, account locks until next day
+  - Ask Moderator/Owner to unlock in SETTINGS
+
+PROBLEM: Weather radar not showing
+SOLUTION:
+  - Check internet connection
+  - Radar only works with active internet
+  - Refresh page
+
+PROBLEM: Can't see other users' messages
+SOLUTION:
+  - They must be logged in to the app
+  - You must be in the same chat room
+  - Refresh the chat (go to different room then back)
+
+DARK MODE
+---------
+
+Toggle "Dark" checkbox in the header for dark theme
+
+NEED HELP?
+----------
+
+Contact: [App Administrator Name/Email]
+Issues: Browser not opening? Try clicking the browser icon in taskbar
+
+================================================================================

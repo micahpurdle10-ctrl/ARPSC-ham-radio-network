@@ -1,0 +1,10 @@
+# ARPSC Cloudflare tunnel config for custom domain
+# Replace TUNNEL-UUID and credentials file path after creating your tunnel.
+
+tunnel: TUNNEL-UUID
+credentials-file: C:\Users\YOUR-USER\.cloudflared\TUNNEL-UUID.json
+
+ingress:
+  - hostname: arpschamradio.com
+    service: http://127.0.0.1:8080
+  - service: http_status:404

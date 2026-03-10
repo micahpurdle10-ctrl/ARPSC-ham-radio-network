@@ -1,0 +1,201 @@
+expo init ARPSCApp
+cd ARPSCApp
+expo start
+npm install @react-navigation/native @react-navigation/bottom-tabs react-native-screens react-native-safe-area-context react-native-vector-icons
+npm install firebase
+import React, { useState, useEffect } from 'react'
+import { Text, View, TextInput, Button, FlatList, StyleSheet, SafeAreaView, ScrollView } from 'react-native'
+import { NavigationContainer } from '@react-navigation/native'
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
+import Icon from 'react-native-vector-icons/Ionicons'
+import { initializeApp } from 'firebase/app'
+import { getFirestore, collection, addDoc, query, onSnapshot, orderBy } from 'firebase/firestore'
+
+const firebaseConfig = {
+  apiKey: "YOUR_API_KEY",
+  authDomain: "YOUR_PROJECT.firebaseapp.com",
+  projectId: "YOUR_PROJECT_ID",
+  storageBucket: "YOUR_PROJECT.appspot.com",
+  messagingSenderId: "YOUR_SENDER_ID",
+  appId: "YOUR_APP_ID"
+}
+
+const app = initializeApp(firebaseConfig)
+const db = getFirestore(app)
+
+const clubInfo = {
+  name: 'ARPSC Hams',
+  description: 'Welcome to the ARPSC Ham Radio Club! Chat, see members, and get info about frequencies and meetings.',
+  frequencies: 'Repeater: 146.880 MHz',
+  meetings: 'Every Friday at 7 PM'
+}
+
+const members = [
+  { id: '1', name: 'Alice' },
+  { id: '2', name: 'Bob' },
+  { id: '3', name: 'Charlie' }
+]
+
+function HomeScreen() {
+  return (
+    <SafeAreaView style={styles.container}>
+      <View style={styles.section}>
+        <Text style={styles.title}>Welcome to {clubInfo.name}!</Text>
+      </View>
+    </SafeAreaView>
+  )
+}
+
+function InfoScreen() {
+  return (
+    <SafeAreaView style={styles.container}>
+      <ScrollView>
+        <View style={styles.section}>
+          <Text style={styles.subtitle}>About the Club:</Text>
+          <Text>{clubInfo.description}</Text>
+          <Text style={styles.subtitle}>Frequencies:</Text>
+          <Text>{clubInfo.frequencies}</Text>
+          <Text style={styles.subtitle}>Meetings:</Text>
+          <Text>{clubInfo.meetings}</Text>
+        </View>
+      </ScrollView>
+    </SafeAreaView>
+  )
+}
+
+function MembersScreen() {
+  return (
+    <SafeAreaView style={styles.container}>
+      <View style={styles.section}>
+        <Text style={styles.subtitle}>Members:</Text>
+        {members.map(member => (
+          <Text key={member.id}>• {member.name}</Text>
+        ))}
+      </View>
+    </SafeAreaView>
+  )
+}
+
+function ChatScreen() {
+  const [message, setMessage] = useState('')
+  const [chatMessages, setChatMessages] = useState([])
+
+  useEffect(() => {
+    const q = query(collection(db, 'messages'), orderBy('createdAt'))
+    const unsubscribe = onSnapshot(q, snapshot => {
+      const msgs = snapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }))
+      setChatMessages(msgs)
+    })
+    return () => unsubscribe()
+  }, [])
+
+  const sendMessage = async () => {
+    if (message.trim() !== '') {
+      await addDoc(collection(db, 'messages'), {
+        text: message,
+        createdAt: new Date()
+      })
+      setMessage('')
+    }
+  }
+
+  return (
+    <SafeAreaView style={styles.container}>
+      <View style={styles.section}>
+        <Text style={styles.subtitle}>Club Chat:</Text>
+        <FlatList
+          data={chatMessages}
+          keyExtractor={item => item.id}
+          renderItem={({ item }) => (
+            <View style={styles.chatBubble}>
+              <Text style={styles.chatText}>{item.text}</Text>
+            </View>
+          )}
+        />
+        <TextInput
+          style={styles.input}
+          placeholder="Type a message..."
+          value={message}
+          onChangeText={setMessage}
+        />
+        <Button title="Send" onPress={sendMessage} />
+      </View>
+    </SafeAreaView>
+  )
+}
+
+const Tab = createBottomTabNavigator()
+
+export default function App() {
+  return (
+    <NavigationContainer>
+      <Tab.Navigator
+        screenOptions={({ route }) => ({
+          headerShown: false,
+          tabBarIcon: ({ color, size }) => {
+            let iconName
+            if (route.name === 'Home') iconName = 'home-outline'
+            else if (route.name === 'Info') iconName = 'information-circle-outline'
+            else if (route.name === 'Members') iconName = 'people-outline'
+            else if (route.name === 'Chat') iconName = 'chatbubble-outline'
+            return <Icon name={iconName} size={size} color={color} />
+          },
+          tabBarActiveTintColor: '#003366',
+          tabBarInactiveTintColor: 'gray'
+        })}
+      >
+        <Tab.Screen name="Home" component={HomeScreen} />
+        <Tab.Screen name="Info" component={InfoScreen} />
+        <Tab.Screen name="Members" component={MembersScreen} />
+        <Tab.Screen name="Chat" component={ChatScreen} />
+      </Tab.Navigator>
+    </NavigationContainer>
+  )
+}
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    marginTop: 20,
+    padding: 10,
+    backgroundColor: '#f8f8f8'
+  },
+  section: {
+    marginBottom: 20,
+    padding: 10,
+    backgroundColor: '#ffffff',
+    borderRadius: 8,
+    shadowColor: '#000',
+    shadowOpacity: 0.05,
+    shadowRadius: 5,
+    elevation: 2
+  },
+  title: {
+    fontSize: 22,
+    fontWeight: 'bold',
+    marginBottom: 10,
+    color: '#003366'
+  },
+  subtitle: {
+    fontSize: 16,
+    fontWeight: 'bold',
+    marginTop: 10,
+    color: '#003366'
+  },
+  input: {
+    borderWidth: 1,
+    borderColor: '#cccccc',
+    padding: 8,
+    marginTop: 10,
+    borderRadius: 5
+  },
+  chatBubble: {
+    backgroundColor: '#e6f0ff',
+    padding: 8,
+    borderRadius: 5,
+    marginVertical: 4
+  },
+  chatText: {
+    fontSize: 14
+  }
+})v

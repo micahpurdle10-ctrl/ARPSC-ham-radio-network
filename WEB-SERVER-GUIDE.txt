@@ -1,0 +1,74 @@
+========================================
+ARPSC WEB SERVER SETUP GUIDE
+========================================
+
+WHAT'S NEW:
+The app can now run as a real web server with an IP address!
+This allows network access from multiple computers.
+
+========================================
+OPTION 1: WEB SERVER (RECOMMENDED)
+========================================
+
+REQUIREMENTS:
+- Python 3.8 or newer installed
+- Download from: https://www.python.org/downloads/
+- During install, CHECK "Add Python to PATH"
+
+HOW TO START:
+1. Double-click START-SERVER.bat
+2. You'll see the server IP addresses:
+   - Local: http://127.0.0.1:8080 (this computer only)
+   - Network: http://192.168.x.x:8080 (share with others)
+3. Open the Network URL in Chrome or Edge
+4. Share the Network URL with other users
+
+BENEFITS:
+✓ Real web server with IP address
+✓ Multiple users can access from different computers
+✓ Professional web application experience
+✓ Network-wide availability
+
+TO STOP SERVER:
+- Press Ctrl+C in the command window
+- Or close the window
+
+========================================
+OPTION 2: SINGLE COMPUTER (SIMPLE)
+========================================
+
+If you only need the app on one computer:
+1. Double-click ARPSC-START.bat
+2. Use as before (file-based, no server needed)
+
+========================================
+SHARING WITH OTHERS ON YOUR NETWORK
+========================================
+
+1. Start the server with START-SERVER.bat
+2. Note the Network URL (e.g. http://192.168.1.100:8080)
+3. Share this URL with other users on your network
+4. They open it in Chrome or Edge
+5. Everyone can use the app simultaneously
+
+NOTE: Other users must be on the same Wi-Fi/network
+
+========================================
+TROUBLESHOOTING
+========================================
+
+"Python not found":
+- Install Python from python.org
+- Make sure to check "Add to PATH" during install
+- Restart computer after installing
+
+"Port 8080 already in use":
+- Close other programs using port 8080
+- Or edit START-SERVER.bat and change port=8080 to port=8081
+
+Can't access from other computers:
+- Check Windows Firewall settings
+- Make sure all computers are on same network
+- Try disabling firewall temporarily to test
+
+========================================
